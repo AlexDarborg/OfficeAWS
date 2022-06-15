@@ -1,3 +1,8 @@
-<mat-card><input type="file" class="file-upload" onchange="console.log(event.target.files)"></mat-card>
-
+<div class="main-div">
+<mat-card>
+    <h4>Press the button and choose the file you want to show on the first page:</h4>
+    <br>
+    <input type="file" class="file-upload" (change)="onChange($event)" >
+</mat-card>
+</div>
 

@@ -12,4 +12,9 @@ export class UploadPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChange(event:any){
+    let file = event.target.files
+    let content = file[0]
+    console.log("FILEEE",content)
+  }
 }
