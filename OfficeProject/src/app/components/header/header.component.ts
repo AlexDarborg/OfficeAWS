@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  goToUploadComponent(tab:any){
+  console.log(tab.index)
+  if(tab.index === 1){
+    this.router.navigateByUrl('/upload');
+    
+  }else{
+    this.router.navigateByUrl('/');
+  }
+}
 }
