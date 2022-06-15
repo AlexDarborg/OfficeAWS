@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
