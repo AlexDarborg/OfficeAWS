@@ -8,7 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FirstPageComponent } from './components/first-page/first-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,8 @@ import { FirstPageComponent } from './components/first-page/first-page.component
     AppRoutingModule,
     MatTabsModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

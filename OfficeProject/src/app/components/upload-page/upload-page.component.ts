@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from '../API/rest-api.service';
 
 @Component({
   selector: 'app-upload-page',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-page.component.scss']
 })
 export class UploadPageComponent implements OnInit {
-
-  constructor() { }
+  url = 'https://0elkcqg9b5.execute-api.us-east-1.amazonaws.com/dev/postFileLambda'
+  constructor(public restApiService:RestApiService,private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -16,5 +18,12 @@ export class UploadPageComponent implements OnInit {
     let file = event.target.files
     let content = file[0]
     console.log("FILEEE",content)
+     this.restApiService.postFile().subscribe((data) =>{
+      console.log("Success 200", data)
+    }, (error)=>{
+      console.log("Error", error)
+    }) 
+
   }
+
 }
