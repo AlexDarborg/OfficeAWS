@@ -11,7 +11,11 @@ import { retry } from 'rxjs/operators';
     constructor(private http: HttpClient){
 
     }
-    postFile(){
-        return this.http.post(this.url, "Hej frontend").pipe(retry(1));
+    getUrl(){
+        return this.http.get(this.url).pipe(retry(1));
     }
+
+    postFile(file:any){
+      return this.http.post(this.url,file).pipe(retry(1));
+  }
 }
